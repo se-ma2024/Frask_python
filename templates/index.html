@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index_style.css') }}">
+    <title>Home</title>
 </head>
 <body>
-    
+    <h1>Welcome to the Home Page</h1>
+    <p>アプリケーションリスト：</p>
+    <a href="{{ url_for('todo_list') }}">・ToDo List</a>
 </body>
 </html>
