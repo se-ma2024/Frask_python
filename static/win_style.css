@@ -1,0 +1,58 @@
+/* static/css/win_style.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 600px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.header {
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.message {
+    font-size: 18px;
+    color: #333;
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+.play-again,
+.go-back {
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.play-again {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.go-back {
+    background-color: #333;
+    color: white;
+}
+
+.play-again:hover,
+.go-back:hover {
+    opacity: 0.8;
+}

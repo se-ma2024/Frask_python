@@ -54,5 +54,33 @@ def delete_memo(memo_index):
         del memos[memo_index]
     return redirect(url_for('memo'))
 
+
+import random
+secret_number = random.randint(1,100)
+attempts = 0
+
+@app.route('/number_guessing')
+def number_guessing():
+    return render_template("number_guessing.html")
+
+@app.route('/guess', methods = ['POST'])
+def guess():
+    global attempts
+    user_guess = int(request.form['guess'])
+    attempts += 1
+
+    if user_guess == secret_number:
+        return render_template('win.html', attempts = attempts)
+    elif user_guess < secret_number:
+        message = "Too low, try again!"
+    else:
+        message = "Too high, try again!"
+    
+    return render_template('number_guessing.html', message = message)
+
+@app.route("/win")
+def win():
+    return render_template("win.html", attempts = attempts)
+
 if __name__ == '__main__':
     app.run(debug=True)

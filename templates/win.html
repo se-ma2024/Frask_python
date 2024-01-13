@@ -1,0 +1,20 @@
+<!-- templates/win.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='win_style.css') }}">
+    <title>Win</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="header">Congratulations! You Guessed the Number!</h1>
+        <p class="message">It took you {{ attempts }} attempts.</p>
+        <div class="button-container">
+            <a class="play-again" href="{{ url_for('number_guessing')}}">Play Again</a>
+            <a class="go-back" href="{{ url_for('index') }}">Go Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
