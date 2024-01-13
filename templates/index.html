@@ -7,10 +7,15 @@
     <title>Home</title>
 </head>
 <body>
-    <h1>Welcome to the Home Page</h1>
-    <p>アプリケーションリスト：</p>
-    <a href="{{ url_for('todo_list') }}">・ToDo List</a>
-    <a href="{{ url_for('memo') }}">・Memo App</a>
-    <a href="{{ url_for('number_guessing') }}">・Number Guessing Game</a>
+    <div class="container">
+        <h1>Welcome to the Home Page</h1>
+        <p>アプリケーションリスト：</p>
+        <nav class="app-list">
+            <a href="{{ url_for('todo_list') }}" class="app-link">ToDo List</a>
+            <a href="{{ url_for('memo') }}" class="app-link">Memo App</a>
+            <a href="{{ url_for('number_guessing') }}" class="app-link">Number Guessing Game</a>
+            <a href="{{ url_for('bulletin_board') }}" class="app-link">Bulletin Board</a>
+        </nav>
+    </div>
 </body>
 </html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bulletin_board_post_style.css') }}">
+    <title>Post Message</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Post Message</h1>
+        <form action="/bulletin_board_post" method="post" class="message-form">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Post</button>
+        </form>
+        <br>
+        <a class="back-link" href="{{ url_for('bulletin_board') }}">Go back to Bulletin Board</a>
+    </div>
+</body>
+</html>

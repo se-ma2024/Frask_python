@@ -78,9 +78,31 @@ def guess():
     
     return render_template('number_guessing.html', message = message)
 
-@app.route("/win")
+@app.route('/win')
 def win():
     return render_template("win.html", attempts = attempts)
+
+
+messages = []
+
+@app.route('/bulletin_board')
+def bulletin_board():
+    return render_template("bulletin_board.html", messages = messages)
+
+@app.route('/bulletin_board_post', methods = ['GET', 'POST'])
+def bulletin_board_post():
+    if request.method == 'POST':
+        message = request.form.get("message")
+        messages.append(message)
+        return redirect(url_for('bulletin_board'))
+    return render_template('bulletin_board_post.html')
+
+@app.route('/delete_message/<int:message_index>', methods=['POST'])
+def delete_message(message_index):
+    if 0 <= message_index < len(messages):
+        del messages[message_index]
+    return redirect(url_for('bulletin_board'))
+
 
 if __name__ == '__main__':
     app.run(debug=True)
